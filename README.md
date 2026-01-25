@@ -1,0 +1,1 @@
+Collection of projects and skill building exercises to track progress and serve as proof of hard skills being built. Most projects will include a README, Photo (if possible), and a wire diagram if hardware is used.
