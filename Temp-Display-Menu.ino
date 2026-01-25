@@ -93,45 +93,14 @@ void renderPage(float tempC, float tempF, int raw, float voltage) {
 
 void loop() {
   
-  // put your main code here, to run repeatedly:
+  // Put your main code here, to run repeatedly:
 
   int raw = readAveragedAnalog(tempPin, 20);
   float voltage = raw * (VREF / 1023.0);
   float tempC = (voltage - 0.5) * 100.0;
   float tempF = (tempC * 9.0 / 5.0) + 32.0;
 
-  /* This block used when not doing the menu system, outputs all 4 display values to LCD
-  // Convert ADC reading to voltage
-  float voltage = raw * (VREF / 1023.0);
-
-  // TMP36: 10 mV per °C with 500 mV offset at 0°C
-  float tempC = (voltage - 0.5) * 100.0;
-  float tempF = (tempC * 9.0 / 5.0) + 32.0;
-
-  // Line 1: show raw + voltage (useful for debugging)
-  lcd.setCursor(0,0);
-  lcd.print("V:");
-  lcd.print(voltage, 3);
-  lcd.print(" Raw:");
-  lcd.print(raw);
-
-  // Pad the rest of the line (clears leftover chars)
-  lcd.print("    ");
-
-  // Line 2: show temperature
-  lcd.setCursor(0, 1);
-  lcd.print(tempC, 1);
-  lcd.print((char)223); // degree symbol on most HD44680 LCDs
-  lcd.print("C  ");
-
-  lcd.print(tempF, 1);
-  lcd.print((char)223);
-  lcd.print("F");
-
-  // Pad end of line if needed
-  lcd.print("   "); 
-  */
-
+ 
 // Read buttons -> generate events ---
 
   bool nextNow = digitalRead(btnNext); // HIGH = not pressed, LOW = pressed
